@@ -7,3 +7,6 @@ This is example of HTTP-Proxy-Servlet (<https://github.com/mitre/HTTP-Proxy-Serv
 2. compile/start application from commond line with `./gradlew bootRun` (linux) `gradlew.bat bootrun` (Windows)
 3. open in browser <http://localhost:8008/solr/example/something> - this is location where our example is served
 4. open `http://localhost:8008/proxy/example/something` - this is our example served through ProxyServlet
+
+Proxy Servlet configuration can be found in  "src/main/resources/application.yml" file. 
+Servlet itself is configured with spring auto configuration magic and can be found at "src/main/java/org.example.proxyservlet.config=SolrProxyServletConfiguration"

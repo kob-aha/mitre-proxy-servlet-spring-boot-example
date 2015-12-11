@@ -1,4 +1,4 @@
-Example Spring Boot application with HTTP-Proxy-Serlet
+Example Spring Boot application with HTTP-Proxy-Servlet
 ======================================================
 
 This is example of HTTP-Proxy-Servlet (<https://github.com/mitre/HTTP-Proxy-Servlet>) with Spring Boot (<http://projects.spring.io/spring-boot/>) and Gradle (<http://gradle.org/>)

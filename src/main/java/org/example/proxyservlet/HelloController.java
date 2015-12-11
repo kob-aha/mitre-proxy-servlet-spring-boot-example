@@ -17,4 +17,9 @@ public class HelloController {
     return "Greetings from " + path;
   }
 
+  @RequestMapping("/replace/example/{path}")
+  public String replacementExample(@PathVariable String path) {
+    return "Greetings from " + path + "! this url http://some.internal.server/solr/ should be replaced when queried through proxy.";
+  }
+
 }

@@ -14,7 +14,7 @@ public class SolrProxyServletConfiguration implements EnvironmentAware {
   private static final String ENV_PROXY_SOLR = "proxy.solr.";
 
   @Bean
-  public ServletRegistrationBean servletRegistrationBean(){
+  public ServletRegistrationBean solrServletRegistrationBean(){
     ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(new ProxyServlet(), propertyResolver.getProperty("servlet_url"));
     servletRegistrationBean.addInitParameter("targetUri", propertyResolver.getProperty("target_url"));
     servletRegistrationBean.addInitParameter(ProxyServlet.P_LOG, propertyResolver.getProperty("logging_enabled", "false"));

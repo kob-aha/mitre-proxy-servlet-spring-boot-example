@@ -1,28 +1,29 @@
-buildscript {
-  repositories {
-    mavenCentral()
-  }
-  dependencies {
-    classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.0.RELEASE")
-  }
+plugins {
+  id 'org.springframework.boot' version '1.5.16.RELEASE'
 }
 
-apply plugin: 'java'
-apply plugin: 'spring-boot'
+apply plugin: 'war'
+apply plugin: "org.springframework.boot"
 
 repositories {
   mavenCentral()
 }
 
+ext {
+  SPRING_BOOT_VERSION = '1.5.16.RELEASE'
+}
+
 dependencies {
-  compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: '1.3.0.RELEASE'
-  compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.3.0.RELEASE'
-  compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '1.3.0.RELEASE'
-  compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '1.3.0.RELEASE'
+  compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: SPRING_BOOT_VERSION
+  compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: SPRING_BOOT_VERSION
+  compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: SPRING_BOOT_VERSION
+  compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: SPRING_BOOT_VERSION
 
   compile group: 'org.mitre.dsmiley.httpproxy', name: 'smiley-http-proxy-servlet', version: '1.7'
 
   compile group: 'commons-io', name: 'commons-io', version: '2.4'
+
+  providedRuntime "org.springframework.boot:spring-boot-starter-tomcat:${SPRING_BOOT_VERSION}"
 }
 
 sourceCompatibility = 1.8

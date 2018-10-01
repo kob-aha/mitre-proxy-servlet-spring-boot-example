@@ -1,11 +1,11 @@
 proxy:
     solr:
         servlet_url: /proxy/*
-        target_url: http://localhost:8008/solr/
+        target_url: http://localhost:8008/solr
 
     replacer:
         servlet_url: /contentreplacer/*
-        target_url: http://localhost:8008/replace/
+        target_url: http://localhost:8008/replace
         url_to_replace: http://some.internal.server/solr/
         url_replacement_value: http://localhost:8008/contentreplacer/
 
